@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Head Turn</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <style>
+      #main {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div id="main">
+      <svg id="mobox" width="100%" height="100%" viewBox="0 0 100 100" preserveAspectRatio="none" style="background: url(http://new.fisherfairmountdesign.com/exp1/__G4.png) no-repeat center center fixed;">
+        <polygon points="0,0 0,100 40,60 40,40" onclick="go('left')" style="fill: transparent;"></polygon>
+        <polygon points="0,0 40,40 60,40 100,0" onclick="go('up')" style="fill: transparent;"></polygon>
+        <polygon points="100,0 60,40 60,60 100,100" onclick="go('right')" style="fill: transparent;"></polygon>
+        <polygon points="0,100 40,60 60,60 100,100" onclick="go('down')" style="fill: transparent;"></polygon>
+      </svg>
+    </div>
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+    var go;
+    System.import('lib/main.js').then(function(m){
+      go = m.go;
+      console.log(m);
+    });
+    </script>
+
+  </body>
+</html>
