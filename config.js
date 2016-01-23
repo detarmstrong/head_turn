@@ -1,5 +1,5 @@
 System.config({
-  baseURL: "/",
+  baseURL: "/head_turn",
   defaultJSExtensions: true,
   transpiler: "babel",
   babelOptions: {
