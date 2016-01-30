@@ -4,6 +4,7 @@
       "jquery": "npm:jquery@^2.2.0",
       "lodash": "npm:lodash@^4.0.0",
       "rx": "npm:rx@^4.0.7",
+      "rx-dom": "npm:rx-dom@^7.0.3",
       "underscore": "npm:underscore@^1.8.3"
     },
     "devDependencies": {

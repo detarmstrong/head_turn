@@ -20,6 +20,7 @@ System.config({
     "jquery": "npm:jquery@2.2.0",
     "lodash": "npm:lodash@4.0.0",
     "rx": "npm:rx@4.0.7",
+    "rx-dom": "npm:rx-dom@7.0.3",
     "underscore": "npm:underscore@1.8.3",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -56,6 +57,10 @@ System.config({
     },
     "npm:process@0.11.2": {
       "assert": "github:jspm/nodelibs-assert@0.1.0"
+    },
+    "npm:rx-dom@7.0.3": {
+      "process": "github:jspm/nodelibs-process@0.1.2",
+      "rx": "npm:rx@4.0.7"
     },
     "npm:rx@4.0.7": {
       "process": "github:jspm/nodelibs-process@0.1.2"

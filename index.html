@@ -35,7 +35,9 @@
 
   <body>
     <div id="layerbox">
-      Loading ...
+      <div id="loading">
+        Loading ...
+      </div>
     </div>
 
     <svg id="mobox" class="controls_layer" viewBox="0 0 100 100" preserveAspectRatio="none"
@@ -50,8 +52,10 @@
     <script src="config.js"></script>
     <script>
     var go;
+    var Rx;
     System.import('lib/main.js').then(function(m){
       go = m.go;
+      Rx = m.getRx();
       console.log(m);
     });
     </script>
