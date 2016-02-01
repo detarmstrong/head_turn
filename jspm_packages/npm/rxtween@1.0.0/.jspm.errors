@@ -1,0 +1,14 @@
+MultipleErrors: /Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:1:1: Unexpected reserved word import
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:1:8: Semi-colon expected
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:1:13: Semi-colon expected
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:1:18: Semi-colon expected
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:2:1: Unexpected reserved word import
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:2:8: Semi-colon expected
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:2:16: Semi-colon expected
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:2:21: Semi-colon expected
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:3:1: Unexpected reserved word import
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:3:8: Semi-colon expected
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:3:54: Semi-colon expected
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:7:55: Unexpected token ...
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:7:58: Unexpected token plotTweenConfigs
+/Users/dat/.jspm/packages/npm/rxtween@1.0.0/test/easings.js:31:1: Unexpected token }
