@@ -5,12 +5,10 @@
     <title>Head Turn</title>
     <meta name='viewport' content='width=device-width, initial-scale=1'>
     <style>
-      #main {
-        width: 100%;
-        height: 100%;
-        position: absolute;
-        top: 0;
-        left: 0;
+      .layerbox {
+        overflow: hidden;
+        width: 500px;
+        height: 500px;
       }
 
       .layer {
@@ -21,40 +19,47 @@
         left: 0;
       }
 
-      .controls_layer {
-        width: 100%;
-        height: 100%;
-        z-index: 3000;
-        position: absolute;
-        top: 0;
-        left: 0;
-      }
-
     </style>
   </head>
 
   <body>
     <div id="layerbox">
-      <div id="loading">
-        Loading ...
-      </div>
+      <svg class="layer" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+         viewBox="0 0 792 612" enable-background="new 0 0 792 612" xml:space="preserve">
+        <g>
+          <path fill="#FFFFFF" stroke="#000000" stroke-miterlimit="10" d="M396.54,112.355c107.363,0,194.399,87.036,194.399,194.4
+            s-87.036,194.4-194.399,194.4c-107.364,0-194.4-87.036-194.4-194.4S289.176,112.355,396.54,112.355z"/>
+        </g>
+        <g>
+          <path fill="#7F3F98" stroke="#000000" stroke-miterlimit="10" d="M175.44,285.155c11.93,0,21.6,9.671,21.6,21.6
+            c0,11.93-9.67,21.6-21.6,21.6c-11.929,0-21.6-9.67-21.6-21.6C153.84,294.826,163.511,285.155,175.44,285.155z"/>
+        </g>
+        <g>
+          <path fill="#21409A" stroke="#000000" stroke-miterlimit="10" d="M397.14,63.755c11.93,0,21.601,9.67,21.601,21.6
+            c0,11.929-9.671,21.6-21.601,21.6s-21.6-9.671-21.6-21.6C375.54,73.425,385.21,63.755,397.14,63.755z"/>
+        </g>
+        <g>
+        </g>
+        <g>
+          <path fill="#ED1C24" stroke="#000000" stroke-miterlimit="10" d="M396.54,285.155c11.929,0,21.6,9.671,21.6,21.6
+            c0,11.93-9.671,21.6-21.6,21.6c-11.93,0-21.601-9.67-21.601-21.6C374.939,294.826,384.61,285.155,396.54,285.155z"/>
+        </g>
+        <g>
+          <path fill="#00A14B" stroke="#000000" stroke-miterlimit="10" d="M397.14,505.655c11.93,0,21.601,9.67,21.601,21.6
+            s-9.671,21.6-21.601,21.6s-21.6-9.67-21.6-21.6S385.21,505.655,397.14,505.655z"/>
+        </g>
+        <g>
+          <path fill="#FFDE17" stroke="#000000" stroke-miterlimit="10" d="M618.24,285.155c11.929,0,21.599,9.671,21.599,21.6
+            c0,11.93-9.67,21.6-21.599,21.6c-11.93,0-21.601-9.67-21.601-21.6C596.64,294.826,606.311,285.155,618.24,285.155z"/>
+        </g>
+      </svg>
     </div>
-
-    <svg id="mobox" class="controls_layer" viewBox="0 0 100 100" preserveAspectRatio="none"
-         style="">
-      <polygon points="0,0 0,100 40,60 40,40" onclick="go('left')" style="fill: transparent;"></polygon>
-      <polygon points="0,0 40,40 60,40 100,0" onclick="go('up')" style="fill: blue; fill-opacity: .0;"></polygon>
-      <polygon points="100,0 60,40 60,60 100,100" onclick="go('right')" style="fill: transparent;"></polygon>
-      <polygon points="0,100 40,60 60,60 100,100" onclick="go('down')" style="fill: transparent;"></polygon>
-    </svg>
 
     <script src="jspm_packages/system.js"></script>
     <script src="config.js"></script>
     <script>
-    var go;
     var Rx;
     System.import('lib/main.js').then(function(m){
-      go = m.go;
       Rx = m.getRx();
       console.log(m);
     });

@@ -21,6 +21,7 @@ System.config({
     "lodash": "npm:lodash@4.0.0",
     "rx": "npm:rx@4.0.7",
     "rx-dom": "npm:rx-dom@7.0.3",
+    "rxtween": "npm:rxtween@1.0.0",
     "underscore": "npm:underscore@1.8.3",
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -62,8 +63,14 @@ System.config({
       "process": "github:jspm/nodelibs-process@0.1.2",
       "rx": "npm:rx@4.0.7"
     },
+    "npm:rx@2.5.3": {
+      "process": "github:jspm/nodelibs-process@0.1.2"
+    },
     "npm:rx@4.0.7": {
       "process": "github:jspm/nodelibs-process@0.1.2"
+    },
+    "npm:rxtween@1.0.0": {
+      "rx": "npm:rx@2.5.3"
     },
     "npm:util@0.10.3": {
       "inherits": "npm:inherits@2.0.1",
