@@ -14,11 +14,11 @@ System.config({
   },
 
   map: {
-    "babel": "npm:babel-core@5.8.34",
-    "babel-runtime": "npm:babel-runtime@5.8.34",
+    "babel": "npm:babel-core@5.8.35",
+    "babel-runtime": "npm:babel-runtime@5.8.35",
     "core-js": "npm:core-js@1.2.6",
     "jquery": "npm:jquery@2.2.0",
-    "lodash": "npm:lodash@4.0.0",
+    "lodash": "npm:lodash@4.2.1",
     "rx": "npm:rx@4.0.7",
     "rx-dom": "npm:rx-dom@7.0.3",
     "underscore": "npm:underscore@1.8.3",
@@ -37,7 +37,7 @@ System.config({
     "npm:assert@1.3.0": {
       "util": "npm:util@0.10.3"
     },
-    "npm:babel-runtime@5.8.34": {
+    "npm:babel-runtime@5.8.35": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:core-js@1.2.6": {
@@ -49,7 +49,7 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:lodash@4.0.0": {
+    "npm:lodash@4.2.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:path-browserify@0.0.0": {
