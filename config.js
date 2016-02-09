@@ -18,7 +18,7 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.35",
     "core-js": "npm:core-js@1.2.6",
     "jquery": "npm:jquery@2.2.0",
-    "lodash": "npm:lodash@4.2.0",
+    "lodash": "npm:lodash@4.2.1",
     "rx": "npm:rx@4.0.7",
     "rx-dom": "npm:rx-dom@7.0.3",
     "rxtween": "npm:rxtween@1.0.0",
@@ -50,7 +50,7 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:lodash@4.2.0": {
+    "npm:lodash@4.2.1": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:path-browserify@0.0.0": {
