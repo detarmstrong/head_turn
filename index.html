@@ -16,6 +16,16 @@
         top: 0;
         left: 0;
         z-index: 1;
+        /* No pointer events, except those allowed in selector below,
+           on little circles */
+        pointer-events: none;
+      }
+
+      /* Little circles should take events.
+         The big center circle shouldn't take events */
+      path:not([fill="#FFFFFF"]) {
+        pointer-events: auto;
+        cursor: pointer;
       }
 
       .dpad_controls_layer {
