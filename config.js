@@ -73,7 +73,7 @@ System.config({
     },
     "npm:rx-dom@7.0.3": {
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "rx": "npm:rx@4.1.0"
+      "rx": "npm:rx@2.5.3"
     },
     "npm:rx@2.5.3": {
       "process": "github:jspm/nodelibs-process@0.1.2"
