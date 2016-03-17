@@ -16,6 +16,7 @@
         top: 0;
         left: 0;
         z-index: 1;
+        background-color: black;
         /* No pointer events, except those allowed in selector below,
            on little circles */
         pointer-events: none;
@@ -42,10 +43,10 @@
   <body>
     <svg id="mobox" class="dpad_controls_layer" viewBox="0 0 100 100" preserveAspectRatio="none"
          style="">
-      <polygon points="0,0 0,100 40,60 40,40" onclick="go('left')" style="fill: transparent;"></polygon>
-      <polygon points="0,0 40,40 60,40 100,0" onclick="go('up')" style="fill: blue; fill-opacity: .0;"></polygon>
-      <polygon points="100,0 60,40 60,60 100,100" onclick="go('right')" style="fill: transparent;"></polygon>
-      <polygon points="0,100 40,60 60,60 100,100" onclick="go('down')" style="fill: transparent;"></polygon>
+      <polygon points="0,0 0,100 40,60 40,40" onclick="go('left')" style="fill: transparent; cursor: w-resize;"></polygon>
+      <polygon points="0,0 40,40 60,40 100,0" onclick="go('up')" style="fill: blue; fill-opacity: .0; cursor: n-resize;"></polygon>
+      <polygon points="100,0 60,40 60,60 100,100" onclick="go('right')" style="fill: transparent; cursor: e-resize;"></polygon>
+      <polygon points="0,100 40,60 60,60 100,100" onclick="go('down')" style="fill: transparent; cursor: s-resize;"></polygon>
     </svg>
 
     <div id="layerbox">

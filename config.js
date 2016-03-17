@@ -18,8 +18,8 @@ System.config({
     "babel-runtime": "npm:babel-runtime@5.8.35",
     "core-js": "npm:core-js@1.2.6",
     "jquery": "npm:jquery@2.2.1",
-    "lodash": "npm:lodash@4.5.1",
-    "rx": "npm:rx@4.0.8",
+    "lodash": "npm:lodash@4.6.1",
+    "rx": "npm:rx@4.1.0",
     "rx-dom": "npm:rx-dom@7.0.3",
     "rxtween": "npm:rxtween@1.0.0",
     "underscore": "npm:underscore@1.8.3",
@@ -61,7 +61,7 @@ System.config({
     "npm:inherits@2.0.1": {
       "util": "github:jspm/nodelibs-util@0.1.0"
     },
-    "npm:lodash@4.5.1": {
+    "npm:lodash@4.6.1": {
       "buffer": "github:jspm/nodelibs-buffer@0.1.0",
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
@@ -73,12 +73,12 @@ System.config({
     },
     "npm:rx-dom@7.0.3": {
       "process": "github:jspm/nodelibs-process@0.1.2",
-      "rx": "npm:rx@4.0.8"
+      "rx": "npm:rx@4.1.0"
     },
     "npm:rx@2.5.3": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
-    "npm:rx@4.0.8": {
+    "npm:rx@4.1.0": {
       "process": "github:jspm/nodelibs-process@0.1.2"
     },
     "npm:rxtween@1.0.0": {
