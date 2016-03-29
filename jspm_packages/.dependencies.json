@@ -46,10 +46,6 @@
   "npm:rx@2.5.3": {
     "process": "github:jspm/nodelibs-process@^0.1.0"
   },
-  "npm:babel-runtime@5.8.35": {
-    "process": "github:jspm/nodelibs-process@^0.1.0"
-  },
-  "npm:babel-core@5.8.35": {},
   "github:jspm/nodelibs-buffer@0.1.0": {
     "buffer": "npm:buffer@^3.0.1"
   },
@@ -65,12 +61,16 @@
   "npm:ieee754@1.1.6": {},
   "npm:isarray@1.0.0": {},
   "github:jspm/nodelibs-child_process@0.1.0": {},
-  "npm:jquery@2.2.1": {},
   "npm:lodash@4.6.1": {
     "buffer": "github:jspm/nodelibs-buffer@^0.1.0",
     "process": "github:jspm/nodelibs-process@^0.1.0"
   },
   "npm:rx@4.1.0": {
     "process": "github:jspm/nodelibs-process@^0.1.0"
-  }
+  },
+  "npm:babel-core@5.8.38": {},
+  "npm:babel-runtime@5.8.38": {
+    "process": "github:jspm/nodelibs-process@^0.1.0"
+  },
+  "npm:jquery@2.2.2": {}
 }
