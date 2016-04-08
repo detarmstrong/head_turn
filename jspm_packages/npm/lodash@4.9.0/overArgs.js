@@ -3,10 +3,11 @@ var apply = require('./_apply'),
     arrayMap = require('./_arrayMap'),
     baseFlatten = require('./_baseFlatten'),
     baseIteratee = require('./_baseIteratee'),
+    isFlattenableIteratee = require('./_isFlattenableIteratee'),
     rest = require('./rest');
 var nativeMin = Math.min;
 var overArgs = rest(function(func, transforms) {
-  transforms = arrayMap(baseFlatten(transforms, 1), baseIteratee);
+  transforms = arrayMap(baseFlatten(transforms, 1, isFlattenableIteratee), baseIteratee);
   var funcsLength = transforms.length;
   return rest(function(args) {
     var index = -1,

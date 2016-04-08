@@ -10,6 +10,6 @@ var differenceBy = rest(function(array, values) {
   if (isArrayLikeObject(iteratee)) {
     iteratee = undefined;
   }
-  return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1, true), baseIteratee(iteratee)) : [];
+  return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true), baseIteratee(iteratee)) : [];
 });
 module.exports = differenceBy;

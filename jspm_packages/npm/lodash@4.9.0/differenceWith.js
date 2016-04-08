@@ -9,6 +9,6 @@ var differenceWith = rest(function(array, values) {
   if (isArrayLikeObject(comparator)) {
     comparator = undefined;
   }
-  return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1, true), undefined, comparator) : [];
+  return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true), undefined, comparator) : [];
 });
 module.exports = differenceWith;

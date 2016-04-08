@@ -4,7 +4,7 @@
   ;
   (function() {
     var undefined;
-    var VERSION = '4.8.2';
+    var VERSION = '4.9.0';
     var LARGE_ARRAY_SIZE = 200;
     var FUNC_ERROR_TEXT = 'Expected a function';
     var HASH_UNDEFINED = '__lodash_hash_undefined__';
@@ -1229,15 +1229,16 @@
         });
         return result;
       }
-      function baseFlatten(array, depth, isStrict, result) {
-        result || (result = []);
+      function baseFlatten(array, depth, predicate, isStrict, result) {
         var index = -1,
             length = array.length;
+        predicate || (predicate = isFlattenable);
+        result || (result = []);
         while (++index < length) {
           var value = array[index];
-          if (depth > 0 && isArrayLikeObject(value) && (isStrict || isArray(value) || isArguments(value))) {
+          if (depth > 0 && predicate(value)) {
             if (depth > 1) {
-              baseFlatten(value, depth - 1, isStrict, result);
+              baseFlatten(value, depth - 1, predicate, isStrict, result);
             } else {
               arrayPush(result, value);
             }
@@ -2202,7 +2203,7 @@
       }
       function createOver(arrayFunc) {
         return rest(function(iteratees) {
-          iteratees = arrayMap(baseFlatten(iteratees, 1), getIteratee());
+          iteratees = arrayMap(baseFlatten(iteratees, 1, isFlattenableIteratee), getIteratee());
           return rest(function(args) {
             var thisArg = this;
             return arrayFunc(iteratees, function(iteratee) {
@@ -2541,8 +2542,8 @@
       if ((DataView && getTag(new DataView(new ArrayBuffer(1))) != dataViewTag) || (Map && getTag(new Map) != mapTag) || (Promise && getTag(Promise.resolve()) != promiseTag) || (Set && getTag(new Set) != setTag) || (WeakMap && getTag(new WeakMap) != weakMapTag)) {
         getTag = function(value) {
           var result = objectToString.call(value),
-              Ctor = result == objectTag ? value.constructor : null,
-              ctorString = toSource(Ctor);
+              Ctor = result == objectTag ? value.constructor : undefined,
+              ctorString = Ctor ? toSource(Ctor) : undefined;
           if (ctorString) {
             switch (ctorString) {
               case dataViewCtorString:
@@ -2655,6 +2656,12 @@
           return baseTimes(length, String);
         }
         return null;
+      }
+      function isFlattenable(value) {
+        return isArrayLikeObject(value) && (isArray(value) || isArguments(value));
+      }
+      function isFlattenableIteratee(value) {
+        return isArray(value) && !(value.length == 2 && !isFunction(value[0]));
       }
       function isIterateeCall(value, index, object) {
         if (!isObject(object)) {
@@ -2788,12 +2795,15 @@
         return result;
       });
       function toSource(func) {
-        if (isFunction(func)) {
+        if (func != null) {
           try {
             return funcToString.call(func);
           } catch (e) {}
+          try {
+            return (func + '');
+          } catch (e) {}
         }
-        return toString(func);
+        return '';
       }
       function wrapperClone(wrapper) {
         if (wrapper instanceof LazyWrapper) {
@@ -2849,21 +2859,21 @@
         return arrayConcat(array, baseFlatten(args, 1));
       }
       var difference = rest(function(array, values) {
-        return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1, true)) : [];
+        return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true)) : [];
       });
       var differenceBy = rest(function(array, values) {
         var iteratee = last(values);
         if (isArrayLikeObject(iteratee)) {
           iteratee = undefined;
         }
-        return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1, true), getIteratee(iteratee)) : [];
+        return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true), getIteratee(iteratee)) : [];
       });
       var differenceWith = rest(function(array, values) {
         var comparator = last(values);
         if (isArrayLikeObject(comparator)) {
           comparator = undefined;
         }
-        return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1, true), undefined, comparator) : [];
+        return isArrayLikeObject(array) ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true), undefined, comparator) : [];
       });
       function drop(array, n, guard) {
         var length = array ? array.length : 0;
@@ -3115,21 +3125,21 @@
         return (array && array.length) ? baseWhile(array, getIteratee(predicate, 3)) : [];
       }
       var union = rest(function(arrays) {
-        return baseUniq(baseFlatten(arrays, 1, true));
+        return baseUniq(baseFlatten(arrays, 1, isArrayLikeObject, true));
       });
       var unionBy = rest(function(arrays) {
         var iteratee = last(arrays);
         if (isArrayLikeObject(iteratee)) {
           iteratee = undefined;
         }
-        return baseUniq(baseFlatten(arrays, 1, true), getIteratee(iteratee));
+        return baseUniq(baseFlatten(arrays, 1, isArrayLikeObject, true), getIteratee(iteratee));
       });
       var unionWith = rest(function(arrays) {
         var comparator = last(arrays);
         if (isArrayLikeObject(comparator)) {
           comparator = undefined;
         }
-        return baseUniq(baseFlatten(arrays, 1, true), undefined, comparator);
+        return baseUniq(baseFlatten(arrays, 1, isArrayLikeObject, true), undefined, comparator);
       });
       function uniq(array) {
         return (array && array.length) ? baseUniq(array) : [];
@@ -3661,7 +3671,7 @@
         return before(2, func);
       }
       var overArgs = rest(function(func, transforms) {
-        transforms = arrayMap(baseFlatten(transforms, 1), getIteratee());
+        transforms = arrayMap(baseFlatten(transforms, 1, isFlattenableIteratee), getIteratee());
         var funcsLength = transforms.length;
         return rest(function(args) {
           var index = -1,
@@ -4364,7 +4374,15 @@
         return result + (index ? '_' : '') + word.toLowerCase();
       });
       function split(string, separator, limit) {
-        return toString(string).split(separator, limit);
+        string = toString(string);
+        if (string && (typeof separator == 'string' || (separator != null && !isRegExp(separator)))) {
+          separator += '';
+          if (separator == '' && reHasComplexSymbol.test(string)) {
+            var strSymbols = stringToArray(string);
+            return limit === undefined ? strSymbols : strSymbols.slice(0, limit < 0 ? 0 : limit);
+          }
+        }
+        return string.split(separator, limit);
       }
       var startCase = createCompounder(function(result, word, index) {
         return result + (index ? ' ' : '') + upperFirst(word);

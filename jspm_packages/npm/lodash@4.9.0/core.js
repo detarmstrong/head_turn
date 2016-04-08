@@ -4,7 +4,7 @@
   ;
   (function() {
     var undefined;
-    var VERSION = '4.8.2';
+    var VERSION = '4.9.0';
     var FUNC_ERROR_TEXT = 'Expected a function';
     var BIND_FLAG = 1,
         PARTIAL_FLAG = 32;
@@ -207,15 +207,16 @@
       });
       return result;
     }
-    function baseFlatten(array, depth, isStrict, result) {
-      result || (result = []);
+    function baseFlatten(array, depth, predicate, isStrict, result) {
       var index = -1,
           length = array.length;
+      predicate || (predicate = isFlattenable);
+      result || (result = []);
       while (++index < length) {
         var value = array[index];
-        if (depth > 0 && isArrayLikeObject(value) && (isStrict || isArray(value) || isArguments(value))) {
+        if (depth > 0 && predicate(value)) {
           if (depth > 1) {
-            baseFlatten(value, depth - 1, isStrict, result);
+            baseFlatten(value, depth - 1, predicate, isStrict, result);
           } else {
             arrayPush(result, value);
           }
@@ -577,6 +578,9 @@
         return baseTimes(length, String);
       }
       return null;
+    }
+    function isFlattenable(value) {
+      return isArrayLikeObject(value) && (isArray(value) || isArguments(value));
     }
     function isPrototype(value) {
       var Ctor = value && value.constructor,
