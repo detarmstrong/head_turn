@@ -103,10 +103,10 @@
 
     <svg id="mobox" class="dpad_controls_layer" viewBox="0 0 100 100" preserveAspectRatio="none"
          style="">
-      <polygon points="0,0 0,100 40,60 40,40" onclick="go('left')" style="fill: transparent; cursor: w-resize;"></polygon>
-      <polygon points="0,0 40,40 60,40 100,0" onclick="go('up')" style="fill: blue; fill-opacity: .0; cursor: n-resize;"></polygon>
-      <polygon points="100,0 60,40 60,60 100,100" onclick="go('right')" style="fill: transparent; cursor: e-resize;"></polygon>
-      <polygon points="0,100 40,60 60,60 100,100" onclick="go('down')" style="fill: transparent; cursor: s-resize;"></polygon>
+      <polygon points="0,0 0,100 40,60 40,40" id="left" style="fill: transparent; cursor: w-resize;"></polygon>
+      <polygon points="0,0 40,40 60,40 100,0" id="up" style="fill: blue; fill-opacity: .0; cursor: n-resize;"></polygon>
+      <polygon points="100,0 60,40 60,60 100,100" id="right" style="fill: transparent; cursor: e-resize;"></polygon>
+      <polygon points="0,100 40,60 60,60 100,100" id="down" style="fill: transparent; cursor: s-resize;"></polygon>
     </svg>
 
     <div id="layerbox">
