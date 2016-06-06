@@ -7,7 +7,7 @@ def make_svgs_center():
     local("node scripts/make_centered_svgs.js")
 
 def rename_files():
-    print "not done yet"
+    print "not done yet. I use vidir usually and name files A1- A12"
 
 def make_ids_in_svgs_uniq():
     """Iterate svg files and ensure all ids are unique across

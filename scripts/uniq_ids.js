@@ -1,6 +1,9 @@
 var cheerio = require('cheerio'),
     fs = require('fs');
 
+//SHIT cheerio has a bug and it'll downcase all the 
+// attribute names in svg, including viewBox and preserveAspectRatio
+// breaking those in hard to find ways!
 const files = fs.readdirSync('../images');
 files
   .filter(f => f.endsWith('.svg'))
