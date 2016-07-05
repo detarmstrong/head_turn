@@ -16,4 +16,4 @@
     });
   }
   module.exports = unzipWith;
-})(require('process'));
+})(require('@empty'));

@@ -16,4 +16,4 @@
     return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
   }
   module.exports = baseToString;
-})(require('process'));
+})(require('@empty'));

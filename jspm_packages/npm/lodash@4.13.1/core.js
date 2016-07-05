@@ -1017,4 +1017,4 @@
       root._ = lodash;
     }
   }.call(this));
-})(require('process'));
+})(require('@empty'));

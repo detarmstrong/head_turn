@@ -5,4 +5,4 @@
     return value == null ? '' : baseToString(value);
   }
   module.exports = toString;
-})(require('process'));
+})(require('@empty'));

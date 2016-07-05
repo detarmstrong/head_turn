@@ -9,4 +9,4 @@
     return result;
   }
   module.exports = cloneBuffer;
-})(require('buffer').Buffer);
+})(require('@empty').Buffer);

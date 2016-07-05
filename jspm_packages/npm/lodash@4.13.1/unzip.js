@@ -22,4 +22,4 @@
     });
   }
   module.exports = unzip;
-})(require('process'));
+})(require('@empty'));

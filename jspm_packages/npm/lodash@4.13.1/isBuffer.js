@@ -10,4 +10,4 @@
     return value instanceof Buffer;
   };
   module.exports = isBuffer;
-})(require('buffer').Buffer);
+})(require('@empty').Buffer);

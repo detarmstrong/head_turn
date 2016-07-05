@@ -9,4 +9,4 @@
     return unzipWith(arrays, iteratee);
   });
   module.exports = zipWith;
-})(require('process'));
+})(require('@empty'));

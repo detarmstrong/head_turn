@@ -5378,4 +5378,4 @@
       root._ = _;
     }
   }.call(this));
-})(require('buffer').Buffer, require('process'));
+})(require('@empty').Buffer, require('@empty'));

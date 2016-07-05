@@ -13,4 +13,4 @@
     return '';
   }
   module.exports = toSource;
-})(require('process'));
+})(require('@empty'));

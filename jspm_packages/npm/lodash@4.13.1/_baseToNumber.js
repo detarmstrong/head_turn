@@ -12,4 +12,4 @@
     return +value;
   }
   module.exports = baseToNumber;
-})(require('process'));
+})(require('@empty'));

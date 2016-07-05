@@ -24,4 +24,4 @@
     return result;
   }
   module.exports = chunk;
-})(require('process'));
+})(require('@empty'));
